@@ -11,10 +11,10 @@
 
   <style>
     :root{
-      --brand:#a58c6f;
-      --bg:#f7f6f3;
-      --text:#2f2f2f;
-      --muted:#6f6f6f;
+      --brand:#a58c6f;    /* arena/acento */
+      --bg:#f7f6f3;       /* fondo claro */
+      --text:#2f2f2f;     /* texto principal */
+      --muted:#6f6f6f;    /* texto secundario */
       --white:#ffffff;
       --card:#ffffff;
       --radius:14px;
@@ -23,7 +23,7 @@
       --sidebar:260px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; scroll-behavior:smooth;}
     img{max-width:100%;height:auto;display:block;border-radius:12px}
     a{color:inherit;text-decoration:none}
     h1,h2,h3{font-weight:200;letter-spacing:.16em}
@@ -31,7 +31,7 @@
     /* Layout con barra lateral */
     aside{
       position:fixed; inset:0 auto 0 0; width:var(--sidebar); background:var(--brand); color:#fff;
-      display:flex; flex-direction:column; justify-content:space-between; padding:28px 22px;
+      display:flex; flex-direction:column; justify-content:space-between; padding:28px 22px; z-index:50;
     }
     aside img{width:180px; margin-bottom:18px}
     .menu{display:flex; flex-direction:column; gap:10px; margin-top:10px}
@@ -111,6 +111,7 @@
   <!-- BARRA LATERAL -->
   <aside>
     <div>
+      <!-- Asegúrate de que este archivo exista junto a index.html -->
       <img src="logo-alzaterra.png" alt="Logo Alzaterra">
       <nav class="menu">
         <a href="#inicio">Inicio</a>
@@ -136,22 +137,184 @@
     </header>
 
     <!-- SOBRE EL DESARROLLO -->
-    <!-- (… aquí va la sección de desarrollo con ubicación, plusvalía y descripción …) -->
+    <section id="desarrollo">
+      <div class="container about">
+        <div class="card">
+          <h2 class="section-title">Desarrollo Inmobiliario Mixto — Av. Álvaro Obregón 98</h2>
+          <p class="muted" style="margin:0 0 14px 0">
+            Ubicación privilegiada y oportunidades sin igual. Este desarrollo mixto, estratégicamente posicionado en
+            <strong>Av. Álvaro Obregón núm. 98, Barrio San Isidro</strong>, combina <strong>12 departamentos modernos</strong>
+            y <strong>24 locales comerciales</strong> en el corazón de una zona en pleno crecimiento. Conectado a fraccionamientos como
+            <strong>Bosques de San Juan</strong> y <strong>Paseo de las Palmas</strong> (más de 8,000 viviendas en el área),
+            este proyecto es el epicentro de la vida urbana y comercial.
+          </p>
+
+          <div style="display:grid;gap:10px;margin-top:10px">
+            <div>
+              <strong>¿Por qué destaca su ubicación?</strong>
+              <ul style="margin:8px 0 0 18px;line-height:1.65">
+                <li><strong>Acceso exclusivo:</strong> A 10 minutos del centro histórico y a &lt;5 km de polos laborales; 22 min a trabajos, 15 min a escuelas.</li>
+                <li><strong>Comercios y servicios:</strong> Colinda con Oxxo y Tiendas Bara Bara; frente a Bodega Aurrera y a pasos de <strong>Plaza del Bosque</strong> (120 locales).</li>
+                <li><strong>Conectividad total:</strong> Flujo: 45% transporte público, 38% autos, 12% peatones, 5% ciclistas.</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Perfecto para inversores y residentes</strong>
+              <ul style="margin:8px 0 0 18px;line-height:1.65">
+                <li><strong>Departamentos:</strong> Para familias y profesionales cercanos a empleo, educación y entretenimiento.</li>
+                <li><strong>Locales comerciales:</strong> Alto potencial por clientela residencial y de tránsito diario.</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Un proyecto con futuro</strong>
+              <p style="margin:8px 0 0 0;line-height:1.7">En una de las áreas de mayor plusvalía de San Juan del Río, con demanda comercial y residencial en expansión.</p>
+            </div>
+            <div style="margin-top:6px"><strong>CP 76803, San Juan del Río, Querétaro</strong></div>
+          </div>
+        </div>
+
+        <!-- Imagen lateral (puedes reemplazar por tu foto real) -->
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Interiores Alzaterra"/>
+      </div>
+    </section>
 
     <!-- AMENIDADES -->
-    <!-- (… lista de amenidades …) -->
+    <section id="amenidades">
+      <div class="container">
+        <h2 class="section-title">Amenidades & Ventajas</h2>
+        <div class="grid">
+          <article class="amen"><h3>Alberca y Solarium</h3><p>Zona de descanso con asoleaderos y vegetación nativa.</p></article>
+          <article class="amen"><h3>Cowork & Lounge</h3><p>Espacios silenciosos y salas de juntas equipadas.</p></article>
+          <article class="amen"><h3>Fitness Studio</h3><p>Área de ejercicio con iluminación natural y equipo esencial.</p></article>
+          <article class="amen"><h3>Pet-friendly</h3><p>Senderos y pet park con bebederos.</p></article>
+          <article class="amen"><h3>Seguridad 24/7</h3><p>Acceso controlado y CCTV perimetral.</p></article>
+          <article class="amen"><h3>Eficiencia</h3><p>LED, ventilación cruzada y ahorro de agua.</p></article>
+        </div>
+      </div>
+    </section>
 
     <!-- GALERÍA -->
-    <!-- (… imágenes …) -->
+    <section id="galeria">
+      <div class="container">
+        <h2 class="section-title">Galería</h2>
+        <div class="masonry">
+          <!-- Reemplaza con tus imágenes reales cuando las tengas -->
+          <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop" alt="Fachada"/>
+          <img src="https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=1200&auto=format&fit=crop" alt="Lobby"/>
+          <img src="https://images.unsplash.com/photo-1552318965-6e6be7484ada?q=80&w=1200&auto=format&fit=crop" alt="Amenidades"/>
+          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200&auto=format&fit=crop" alt="Terraza"/>
+        </div>
+      </div>
+    </section>
 
     <!-- PRECIOS -->
-    <!-- (… tabla de precios …) -->
+    <section id="precios">
+      <div class="container">
+        <h2 class="section-title">Lista de Precios Alzaterra</h2>
+        <div class="prices">
+          <table aria-label="Lista de precios">
+            <thead>
+              <tr>
+                <th>Unidades</th>
+                <th>Cantidad</th>
+                <th>Tamaño</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Departamentos</td><td>12</td><td>60 m²</td><td>$1,170,000</td></tr>
+              <tr><td>Locales Planta Alta</td><td>8</td><td>50 m²</td><td>$925,000</td></tr>
+              <tr><td>Locales Planta Alta</td><td>4</td><td>100 m²</td><td>$1,850,000</td></tr>
+              <tr><td>Locales PB Chicos</td><td>8</td><td>50 m²</td><td>$1,125,000</td></tr>
+              <tr><td>Locales PB Grandes</td><td>4</td><td>100 m²</td><td>$2,250,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:14px; font-weight:600">Total: 36 Unidades</p>
+        <p style="margin-top:6px" class="muted">Se aparta con <strong>$50,000</strong> y tiene 8 días naturales para firmar contrato y dar su enganche.</p>
+      </div>
+    </section>
 
     <!-- UBICACIÓN -->
-    <!-- (… iframe de Google Maps …) -->
+    <section id="ubicacion">
+      <div class="container">
+        <h2 class="section-title">Ubicación</h2>
+        <iframe
+          class="map-embed"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.google.com/maps?q=Av.+%C3%81lvaro+Obreg%C3%B3n+98%2C+Barrio+San+Isidro%2C+San+Juan+del+R%C3%ADo%2C+Quer%C3%A9taro+76803&output=embed">
+        </iframe>
+      </div>
+    </section>
 
     <!-- CONTACTO -->
-    <!-- (… asesores y formulario …) -->
+    <section id="contacto">
+      <div class="container">
+        <h2 class="section-title">Solicita más información</h2>
+        <p class="muted">Puedes contactar a nuestro conmutador o a cualquiera de nuestros asesores para más detalles del desarrollo y precios.</p>
+        <p style="font-weight:700; margin:10px 0 18px">Conmutador: <a href="tel:+524428869903">+52 442 886 9903</a></p>
+
+        <div class="contacts">
+          <ul class="people" aria-label="Equipo de ventas">
+            <li><strong>CP Edgar Isaac Niño Islas</strong> — Closer Sales<br>
+              Email: <a href="mailto:edgarnino8@me.com">edgarnino8@me.com</a> · Tel: <a href="tel:+525554358011">+52 5554 35 80 11</a></li>
+
+            <li><strong>Laura Isabel Amador González</strong> — Dir. Ventas<br>
+              Tel: <a href="tel:+524422394712">+52 442 239 4712</a></li>
+
+            <li><strong>Christian Jesus Niño Islas</strong> — Ventas Internas<br>
+              Email: <a href="mailto:cj_nino@hotmail.com">cj_nino@hotmail.com</a> · Tel: <a href="tel:+525554541950">+52 55 5454 1950</a></li>
+
+            <li><strong>Luis Miguel Salinas Noriega</strong> — Coord. Ventas Internas y Externas<br>
+              Email: <a href="mailto:Salinaschaco@gmail.com">Salinaschaco@gmail.com</a> · Tel: <a href="tel:+525570081667">+52 55 7008 1667</a></li>
+
+            <li><strong>Juan Carlos De Castro Lopez</strong> — Ventas Internas<br>
+              Email: <a href="mailto:inmuebles.comprayventa@gmail.com">inmuebles.comprayventa@gmail.com</a> · Tel: <a href="tel:+523315121694">+52 33 1512 1694</a></li>
+
+            <li><strong>Esmeralda Lozada Trejo</strong> — Ventas Internas<br>
+              Tel: <a href="tel:+524424488574">+52 442 448 8574</a></li>
+          </ul>
+
+          <!-- Formulario (simulado). Puedo activarte Netlify Forms si quieres. -->
+          <form class="form" onsubmit="alert('Gracias, pronto nos pondremos en contacto.'); return false;">
+            <div class="row">
+              <div>
+                <label class="muted" for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" required/>
+              </div>
+              <div>
+                <label class="muted" for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono"/>
+              </div>
+            </div>
+            <div class="row" style="margin-top:var(--gap)">
+              <div>
+                <label class="muted" for="email">Correo</label>
+                <input type="email" id="email" name="email" required/>
+              </div>
+              <div>
+                <label class="muted" for="interes">Interés</label>
+                <select id="interes" name="interes">
+                  <option value="">Selecciona…</option>
+                  <option>Invertir</option>
+                  <option>Comprar</option>
+                  <option>Rentar</option>
+                </select>
+              </div>
+            </div>
+            <div style="margin-top:var(--gap)">
+              <label class="muted" for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué estás buscando…"></textarea>
+            </div>
+            <div style="margin-top:var(--gap);display:flex;gap:12px;align-items:center">
+              <button class="btn" type="submit">Enviar</button>
+              <span class="muted" style="font-size:12px">Al enviar aceptas nuestro aviso de privacidad.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div class="container">© 2025 Alzaterra. Todos los derechos reservados.</div>
