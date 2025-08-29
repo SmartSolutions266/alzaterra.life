@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Alzaterra — Desarrollo inmobiliario mixto en San Juan del Río. Departamentos y locales en ubicación estratégica."/>
+  <title>Alzaterra — Desarrollo Inmobiliario</title>
+
+  <!-- Tipografía delgada y minimalista -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#a58c6f;
+      --bg:#f7f6f3;
+      --text:#2f2f2f;
+      --muted:#6f6f6f;
+      --white:#ffffff;
+      --card:#ffffff;
+      --radius:14px;
+      --shadow:0 8px 24px rgba(0,0,0,.06);
+      --gap:28px;
+      --sidebar:260px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    img{max-width:100%;height:auto;display:block;border-radius:12px}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3{font-weight:200;letter-spacing:.16em}
+
+    /* Layout con barra lateral */
+    aside{
+      position:fixed; inset:0 auto 0 0; width:var(--sidebar); background:var(--brand); color:#fff;
+      display:flex; flex-direction:column; justify-content:space-between; padding:28px 22px;
+    }
+    aside img{width:180px; margin-bottom:18px}
+    .menu{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+    .menu a{color:#fff;padding:10px 12px;border-radius:10px;font-weight:300;letter-spacing:.06em}
+    .menu a:hover{background:rgba(255,255,255,.1)}
+    aside small{opacity:.85}
+
+    main{margin-left:var(--sidebar); min-height:100vh; width:calc(100% - var(--sidebar))}
+    .container{width:min(1120px,92%); margin-inline:auto}
+
+    /* HERO */
+    header.hero{
+      position:relative; height:78vh; display:flex; align-items:center; justify-content:center; text-align:center;
+      background:url('https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      isolation:isolate;
+    }
+    header.hero::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,.44)}
+    .hero-content{position:relative; z-index:1; color:#fff; max-width:840px; padding:0 16px}
+    .logo-hero{width:180px; margin:0 auto 18px}
+    .hero-content h1{font-size:clamp(30px,5vw,60px); margin:6px 0 8px}
+    .hero-content p{font-size:clamp(16px,2.2vw,20px); font-weight:200; letter-spacing:.12em}
+
+    /* Secciones */
+    section{padding:72px 0}
+    .section-title{margin:0 0 18px; font-size:28px}
+    .muted{color:var(--muted)}
+    .card{background:var(--card); padding:28px; border-radius:var(--radius); box-shadow:var(--shadow)}
+
+    /* Sobre */
+    .about{display:grid; grid-template-columns:1.1fr .9fr; gap:var(--gap); align-items:center}
+    .about p{line-height:1.8}
+
+    /* Amenidades */
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:var(--gap)}
+    .amen{grid-column:span 4; background:var(--card); padding:22px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .amen h3{margin:0 0 6px; font-weight:400; letter-spacing:.06em}
+    .amen p{margin:0; color:#565; font-weight:300; line-height:1.7}
+
+    /* Galería */
+    .masonry{columns:3 320px; column-gap:var(--gap)}
+    .masonry img{break-inside:avoid; margin-bottom:var(--gap)}
+
+    /* Tabla de precios */
+    .prices{overflow:auto}
+    table{width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:var(--shadow)}
+    thead th{background:var(--brand); color:#fff; text-align:left; padding:14px}
+    td,th{padding:14px; border-bottom:1px solid #eee}
+    tbody tr:hover{background:#faf9f6}
+
+    /* Mapa */
+    .map-embed{border:0; width:100%; height:360px; border-radius:var(--radius); box-shadow:var(--shadow)}
+
+    /* Contacto */
+    .contacts{display:grid; grid-template-columns:1.1fr .9fr; gap:var(--gap)}
+    .people{list-style:none; padding:0; margin:0; display:grid; gap:12px}
+    .people li{background:#fff; border-radius:12px; padding:14px 16px; box-shadow:var(--shadow)}
+    .people a{color:inherit; text-decoration:underline; text-underline-offset:2px}
+    .form{background:#fff; padding:22px; border-radius:12px; box-shadow:var(--shadow)}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap)}
+    input,select,textarea{width:100%; padding:14px 16px; border:1px solid #ddd; border-radius:12px; background:#fff; font:inherit}
+    textarea{min-height:120px; resize:vertical}
+    .btn{background:var(--brand); color:#fff; border:0; padding:12px 16px; border-radius:12px; font-weight:600; cursor:pointer}
+
+    footer{padding:44px 0; color:#6a6a6a; text-align:center}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      aside{position:static; width:100%; height:auto; border-bottom:1px solid rgba(255,255,255,.2)}
+      main{margin-left:0; width:100%}
+      .menu{flex-direction:row; flex-wrap:wrap}
+      .about,.contacts{grid-template-columns:1fr}
+      header.hero{height:68vh}
+    }
+  </style>
+</head>
+<body>
+  <!-- BARRA LATERAL -->
+  <aside>
+    <div>
+      <img src="logo-alzaterra.png" alt="Logo Alzaterra">
+      <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#desarrollo">El Desarrollo</a>
+        <a href="#amenidades">Amenidades</a>
+        <a href="#galeria">Galería</a>
+        <a href="#precios">Precios</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <small>&copy; 2025 Alzaterra</small>
+  </aside>
+
+  <main>
+    <!-- HERO -->
+    <header id="inicio" class="hero">
+      <div class="hero-content">
+        <img src="logo-alzaterra.png" alt="Alzaterra" class="logo-hero" />
+        <h1>Arquitectura para respirar.</h1>
+        <p>Un desarrollo mixto que combina estética, calma y funcionalidad en el corazón de San Juan del Río.</p>
+      </div>
+    </header>
+
+    <!-- SOBRE EL DESARROLLO -->
+    <!-- (… aquí va la sección de desarrollo con ubicación, plusvalía y descripción …) -->
+
+    <!-- AMENIDADES -->
+    <!-- (… lista de amenidades …) -->
+
+    <!-- GALERÍA -->
+    <!-- (… imágenes …) -->
+
+    <!-- PRECIOS -->
+    <!-- (… tabla de precios …) -->
+
+    <!-- UBICACIÓN -->
+    <!-- (… iframe de Google Maps …) -->
+
+    <!-- CONTACTO -->
+    <!-- (… asesores y formulario …) -->
+
+    <footer>
+      <div class="container">© 2025 Alzaterra. Todos los derechos reservados.</div>
+    </footer>
+  </main>
+</body>
+</html>
